@@ -1,0 +1,4 @@
+backend-demo/node_modules/
+frontend-demo/node_modules/
+npm-debug.log
+.env
