@@ -1,4 +1,26 @@
+# Node.js
 backend-demo/node_modules/
 frontend-demo/node_modules/
 npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# environment
 .env
+backend-demo/.env
+frontend-demo/.env
+
+# build outputs
+frontend-demo/build/
+backend-demo/dist/
+
+# system files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# React test coverage
+frontend-demo/coverage/
