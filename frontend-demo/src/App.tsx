@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { STATUS_TEXT_MAP } from "./constants/status";
 
 type Case = {
-  id: number;
-  title: string;
+  id: string;
+  name: string;
   status: string;
 };
 
@@ -12,7 +13,7 @@ function App() {
   const fetchCases = async () => {
     const res = await fetch("http://localhost:3001/api/cases");
     const data = await res.json();
-    setCases(data);
+    setCases(data.data);
   };
 
   return (
@@ -24,7 +25,9 @@ function App() {
       <ul>
         {cases.map((c) => (
           <li key={c.id}>
-            {c.title} - {c.status}
+          {c.name}
+          <span> - {STATUS_TEXT_MAP[c.status] ?? c.status}</span>
+
           </li>
         ))}
       </ul>
