@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.page-title {
+  text-align: center;
+}
+
+.case-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: fit-content;
+  text-align: left;
+}
+
+.case-item {
+  margin: 8px 0;
+}

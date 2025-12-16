@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { STATUS_TEXT_MAP } from "./constants/status";
+import "./App.css";
 
 type Case = {
   id: string;
@@ -17,14 +18,14 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>案件列表 Demo</h1>
+    <div className="App">
+      <h1 className="page-title">案件列表 Demo</h1>
 
       <button onClick={fetchCases}>查詢案件</button>
 
-      <ul>
+      <ul className="case-list">
         {cases.map((c) => (
-          <li key={c.id}>
+          <li key={c.id} className="case-item">
           {c.name}
           <span> - {STATUS_TEXT_MAP[c.status] ?? c.status}</span>
 
