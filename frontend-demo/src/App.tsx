@@ -25,9 +25,12 @@ function App() {
 
       <ul className="case-list">
         {cases.map((c) => (
-          <li key={c.id} className="case-item">
-          {c.name}
-          <span> - {STATUS_TEXT_MAP[c.status] ?? c.status}</span>
+          <li key={c.id} className="case-card">
+          <div className="case-title">{c.name}</div>
+
+          <span className={`case-badge ${c.status}`}>
+            {STATUS_TEXT_MAP[c.status] ?? c.status}
+          </span>
 
           </li>
         ))}

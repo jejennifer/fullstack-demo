@@ -44,11 +44,48 @@
 .case-list {
   list-style: none;
   padding: 0;
-  margin: 20px auto;
+  margin: 24px auto;
   width: fit-content;
   text-align: left;
 }
 
 .case-item {
   margin: 8px 0;
+}
+
+.case-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  min-width: 320px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.case-title {
+  font-weight: 500;
+}
+
+/* 狀態 badge 共用樣式 */
+.case-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* 不同狀態顏色 */
+.case-badge.in_progress {
+  background-color: #f59e0b; /* 橘 */
+}
+
+.case-badge.closed {
+  background-color: #10b981; /* 綠 */
 }
