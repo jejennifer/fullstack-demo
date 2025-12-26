@@ -29,6 +29,7 @@ function App() {
       <h1 className="page-title">案件列表 Demo</h1>
 
       <div className="search-bar">
+        <span className="search-label">查詢案件：</span>
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
@@ -37,8 +38,6 @@ function App() {
           <option value="in_progress">進行中</option>
           <option value="closed">已結案</option>
         </select>
-
-        <button onClick={fetchCases}>查詢案件</button>
       </div>
 
       <ul className="case-list">
