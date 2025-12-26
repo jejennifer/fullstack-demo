@@ -11,6 +11,13 @@ type Case = {
 function App() {
   const [cases, setCases] = useState<Case[]>([]);
 
+  const [filterStatus, setFilterStatus] = useState<string>("all");
+
+  const filteredCases = cases.filter((c) => {
+    if (filterStatus === "all") return true;
+    return c.status === filterStatus;
+  });
+
   const fetchCases = async () => {
     const res = await fetch("http://localhost:3001/api/cases");
     const data = await res.json();
@@ -21,10 +28,21 @@ function App() {
     <div className="App">
       <h1 className="page-title">案件列表 Demo</h1>
 
-      <button onClick={fetchCases}>查詢案件</button>
+      <div className="search-bar">
+        <select
+          value={filterStatus}
+          onChange={(e) => setFilterStatus(e.target.value)}
+        >
+          <option value="all">全部案件</option>
+          <option value="in_progress">進行中</option>
+          <option value="closed">已結案</option>
+        </select>
+
+        <button onClick={fetchCases}>查詢案件</button>
+      </div>
 
       <ul className="case-list">
-        {cases.map((c) => (
+        {filteredCases.map((c) => (
           <li key={c.id} className="case-card">
           <div className="case-title">{c.name}</div>
 
