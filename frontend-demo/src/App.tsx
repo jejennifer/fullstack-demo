@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { STATUS_TEXT_MAP } from "./constants/status";
 import "./App.css";
 
@@ -17,6 +17,11 @@ function App() {
     if (filterStatus === "all") return true;
     return c.status === filterStatus;
   });
+
+  useEffect(() => {
+  fetchCases();
+  }, []);
+
 
   const fetchCases = async () => {
     const res = await fetch("http://localhost:3001/api/cases");
