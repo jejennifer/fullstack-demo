@@ -22,7 +22,6 @@ function App() {
   fetchCases();
   }, []);
 
-
   const fetchCases = async () => {
     const res = await fetch("http://localhost:3001/api/cases");
     const data = await res.json();
@@ -31,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="page-title">案件列表 Demo</h1>
+      <h1 className="page-title">案件列表</h1>
 
       <div className="search-bar">
         <span className="search-label">查詢案件：</span>
